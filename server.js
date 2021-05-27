@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 let data = require('./MOCK_DATA.json');
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.get('/mentees', (req, res) => {
   if (req.query.q) {
